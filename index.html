@@ -3,63 +3,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PDFs à consulter</title>
+  <title>Mes PDFs – Seniors Connect</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     body {
       margin: 0;
-      padding: 2rem;
       font-family: "Segoe UI", sans-serif;
-      background: #f5f5f5;
-      color: #333;
+      background: linear-gradient(135deg, #fce4ec, #e3f2fd);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      animation: fadeIn 1.2s ease;
     }
 
-    h1 {
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    header {
       text-align: center;
-      color: #8d6e63;
+      margin-bottom: 2rem;
     }
 
-    ul {
+    header img {
+      height: 60px;
+      margin-bottom: 0.5rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #6d4c41;
+      animation: slideDown 1s ease;
+    }
+
+    @keyframes slideDown {
+      from {transform: translateY(-20px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    ul.pdf-list {
+      list-style: none;
+      padding: 0;
       max-width: 600px;
-      margin: 2rem auto;
-      padding-left: 1.5rem;
-      line-height: 2;
+      width: 100%;
     }
 
-    li a {
-      color: #8d6e63;
-      text-decoration: underline;
+    ul.pdf-list li {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    ul.pdf-list li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    ul.pdf-list i {
+      color: #e53935;
+      font-size: 1.4rem;
+    }
+
+    ul.pdf-list a {
+      text-decoration: none;
+      color: #333;
       font-size: 1.1rem;
     }
 
     .back-btn {
-      display: block;
-      width: fit-content;
-      margin: 2rem auto 0;
-      padding: 0.5rem 1rem;
+      margin-top: 2rem;
+      padding: 0.7rem 1.4rem;
       background-color: #8d6e63;
       color: white;
       border: none;
       border-radius: 10px;
-      text-align: center;
       font-size: 1rem;
       text-decoration: none;
+      transition: background 0.3s ease;
     }
 
     .back-btn:hover {
-      background-color: #6d4c41;
+      background-color: #5d4037;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <h1><i class="fas fa-file-pdf"></i> Mes Documents PDF</h1>
 
-  <ul>
-    <li><a href="https://drive.google.com/file/d/1G5sizrQGrBB1uyyg4xWXVTBBvh6mpTmg/view?usp=share_link" target="_blank">PDF n°1 – Initiation ordinateur</a></li>
-    <li><a href="https://drive.google.com/file/d/EXEMPLEID2/view?usp=share_link" target="_blank">PDF n°2 – Exercices souris</a></li>
-    <li><a href="https://drive.google.com/file/d/EXEMPLEID3/view?usp=share_link" target="_blank">PDF n°3 – Clavier simple</a></li>
+  <header>
+    <img src="logo.png" alt="Logo Seniors Connect" />
+    <h1>Mes Documents PDF</h1>
+  </header>
+
+  <ul class="pdf-list">
+    <li>
+      <i class="fas fa-file-pdf"></i>
+      <a href="https://drive.google.com/file/d/1G5sizrQGrBB1uyyg4xWXVTBBvh6mpTmg/view?usp=share_link" target="_blank">
+        PDF n°1 – Le mot de passe 
+      </a>
+    </li>
+    <li>
+      <i class="fas fa-file-pdf"></i>
+      <a href="https://drive.google.com/file/d/EXEMPLEID2/view?usp=share_link" target="_blank">
+        PDF n°2 – Exercices souris
+      </a>
+    </li>
+    <li>
+      <i class="fas fa-file-pdf"></i>
+      <a href="https://drive.google.com/file/d/EXEMPLEID3/view?usp=share_link" target="_blank">
+        PDF n°3 – Clavier simple
+      </a>
+    </li>
   </ul>
 
-  <a class="back-btn" href="index.html">← Retour</a>
+  <a class="back-btn" href="index.html">← Retour à l’accueil</a>
+
+  <footer>
+    © Matéo CALLEJA - Tous droits réservés
+  </footer>
+
 </body>
 </html>
